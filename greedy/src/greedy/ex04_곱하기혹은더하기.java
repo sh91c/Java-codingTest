@@ -7,28 +7,28 @@ public class ex04_곱하기혹은더하기 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
-		// N, K 공백을 기준으로 구분해 입력받기
-		int n = sc.nextInt();
-		int k = sc.nextInt();
-		int count = 0;
-
-		while (true) {
-			// N이 K로 나누어 떨어지는 수가 될 때까지 빼기
-			int target = (n / k) * k; // 반복문을 쓰지않고 K가 나눌수 있는 N에 가까운 수를 찾음
-			count += (n - target); // N과 찾은 수를 뺀 값이, -1 계산 횟수를 구한 값과 같음 -> count에 담음
-			n = target; // K에 나눠지는 값을 N에 대입
-
-			// K로 나눈 값을 다시 N에 넣고 count 1증가
-			n /= k;
-			count += 1;
-
-			// N이 K보다 작을 때 (더 이상 나눌 수 없을 때) 반복문 탈출
-			if (n < k)
-				break;
+		// 입력 조건 : 첫째 줄에 여러 개의 숫자로 구성된 문자열 S가 주어짐(1 <= S <= 20)
+		// 출력 조건 : 첫째 줄에 만들어질 수 있는 가장 큰 수를 출력
+		String s = sc.nextLine();
+		
+		// 첫 번째 수를 result에 대입
+		long result = s.charAt(0) - '0'; // .charAt(i) - '0' : 문자열 -> 문자 1개 -> 정수형 변환 과정임
+		
+		for (int i = 1; i < s.length(); i++) {
+			// 1번째 인덱스(두 번째 수)를 받아 하나라도 1이하이면 더하기, 2이상이면 곱하기 수행
+			int num = s.charAt(i) - '0';
+			if( result <= 1 || num <= 1) {
+				result += num;
+			} else {
+				result *= num;
+			}
 		}
-		// 마지막으로 남은 수(K보다 작아진 N)에 대해 1씩 빼기
-		count += (n - 1);
-		System.out.println(count);
+		
+		System.out.println(result);
+		
 	}
 }
+
+//1. 두 수 중에서 하나라도 0 또는 1인 경우, 곱하기 보다 더하기를 수행하는 것이 효율적
+//2. 두 수에 대해 연산을 수행할 때, 두 수 중에서 하나라도 1 이하인 경우 +
+//   두 수 모두 2 이상인 경우 * 연산하면 정답
