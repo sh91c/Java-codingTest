@@ -2,7 +2,7 @@ package greedy;
 
 import java.util.Scanner;
 
-public class ex01_coinType {
+public class ex01_거스름돈 {
 
 	public static void main(String[] args) {
 		// 거스름 돈 : 거슬러야 할 N원에 대한 동전의 최소 개수 (500원, 100원, 50원, 10원)

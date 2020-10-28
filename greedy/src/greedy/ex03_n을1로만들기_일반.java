@@ -3,7 +3,7 @@ package greedy;
 import java.util.Scanner;
 
 // 어떠한 수 N이 1이 될 때까지
-public class ex03_n_easy {
+public class ex03_n을1로만들기_일반 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
