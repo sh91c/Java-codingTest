@@ -1,4 +1,4 @@
-package greedy;
+package 그리디;
 
 import java.util.*;
 
