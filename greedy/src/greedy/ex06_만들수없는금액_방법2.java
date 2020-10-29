@@ -22,7 +22,6 @@ public class ex06_만들수없는금액_방법2 {
 			// 오름차순으로 정렬했으니 첫번째 인덱스가 1이면 반복문 탈출
 			if(target < al.get(i))	break;
 			target += al.get(i);
-			System.out.println(al.get(i) + " " + target);
 		}
 		System.out.println(target);
 	}
